@@ -97,6 +97,18 @@ class RegistrationController: UIViewController {
     
     // MARK: - Selectors
     
+    @objc func keyboardWillShow() {
+        if view.frame.origin.y == 0 {
+            self.view.frame.origin.y -= 88
+        }
+    }
+    
+    @objc func keyboardWillHide() {
+        if view.frame.origin.y != 0 {
+            view.frame.origin.y = 0
+        }
+    }
+    
     @objc func handleRegistration() {
         guard let email = emailTextField.text else {return}
         guard let fullname = fullnameTextField.text else {return}
@@ -106,11 +118,15 @@ class RegistrationController: UIViewController {
         
         let credentials = RegistrationCredentials(email: email, passsword: password, fullname: fullname, username: username, profileImage: profileImage)
         
+        showLoader(true, withText: "Creating your account...")
+        
         AuthService.shared.createUser(credentials: credentials) { (error) in
                 if let error = error {
                     print("DEBUG: Failed to create user with error: \(error.localizedDescription)")
-                return
+                    self.showLoader(false)
+                    return
             }
+            self.showLoader(false)
             self.dismiss(animated: true, completion: nil)
         }
     }
@@ -162,7 +178,10 @@ class RegistrationController: UIViewController {
         fullnameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         usernameTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 }
 
