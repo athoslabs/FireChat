@@ -38,7 +38,7 @@ class NewMessageController: UITableViewController {
     // MARK: - API
     
     func fetchUsers() {
-        service.fetchUsers { (users) in
+        Service.fetchUsers { (users) in
             self.users = users
             self.tableView.reloadData()
         }
