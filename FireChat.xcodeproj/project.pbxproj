@@ -20,6 +20,7 @@
 		61014276247D993A00DA0B96 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61014275247D993A00DA0B96 /* Extensions.swift */; };
 		614BC84724814220005C13E4 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BC84624814220005C13E4 /* ChatController.swift */; };
 		614BC84924814C38005C13E4 /* CustomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BC84824814C38005C13E4 /* CustomInputAccessoryView.swift */; };
+		614BC84B2481682F005C13E4 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614BC84A2481682F005C13E4 /* MessageCell.swift */; };
 		61607959247FF9B00064B0C4 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61607958247FF9B00064B0C4 /* AuthService.swift */; };
 		6160795B24802A310064B0C4 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6160795A24802A310064B0C4 /* NewMessageController.swift */; };
 		6160795D24803CD00064B0C4 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6160795C24803CD00064B0C4 /* UserCell.swift */; };
@@ -49,6 +50,7 @@
 		61014275247D993A00DA0B96 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		614BC84624814220005C13E4 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		614BC84824814C38005C13E4 /* CustomInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputAccessoryView.swift; sourceTree = "<group>"; };
+		614BC84A2481682F005C13E4 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		61607958247FF9B00064B0C4 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		6160795A24802A310064B0C4 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		6160795C24803CD00064B0C4 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				61ABF1D8247EA9F7009BFE76 /* CustomTextField.swift */,
 				6160795C24803CD00064B0C4 /* UserCell.swift */,
 				614BC84824814C38005C13E4 /* CustomInputAccessoryView.swift */,
+				614BC84A2481682F005C13E4 /* MessageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				614BC84724814220005C13E4 /* ChatController.swift in Sources */,
 				61ABF1D9247EA9F7009BFE76 /* CustomTextField.swift in Sources */,
 				6160795B24802A310064B0C4 /* NewMessageController.swift in Sources */,
+				614BC84B2481682F005C13E4 /* MessageCell.swift in Sources */,
 				614BC84924814C38005C13E4 /* CustomInputAccessoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
