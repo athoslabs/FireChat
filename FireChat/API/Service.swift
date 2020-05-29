@@ -24,6 +24,21 @@ struct Service {
         }
     }
     
+    static func fetchMessage(forUser user: User, completion: @escaping([Message]) -> Void) {
+        var messages = [Message]()
+        guard let currentUid = Auth.auth().currentUser?.uid else {return}
+        
+        let query = COLLECTION_MESSAGES.document(currentUid).collection(user.uid).order(by: "timestamp")
+        
+        query.addSnapshotListener { (snapshot, error) in
+            snapshot?.documentChanges.forEach({ (change) in
+                let dictionary = change.document.data()
+                messages.append(Message(dictionary: dictionary))
+                completion(messages)
+            })
+        }
+    }
+    
     static func uploadMessage(_ message: String, to user: User, completion: ((Error?) -> Void)?) {
         guard let currentUid = Auth.auth().currentUser?.uid else {return}
         
@@ -33,4 +48,6 @@ struct Service {
             COLLECTION_MESSAGES.document(user.uid).collection(currentUid).addDocument(data: data, completion: completion)
         }
     }
+    
+     
 }

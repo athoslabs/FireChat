@@ -58,6 +58,7 @@ class ConversationsController: UIViewController {
             presentLoginScreen()
         } else {
             print("DEBUG: User id is: \(Auth.auth().currentUser?.uid)")
+            
         }
     }
     
